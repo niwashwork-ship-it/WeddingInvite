@@ -5,8 +5,8 @@
     <title>Khushi ❤️ Niwash | Wedding Invitation</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -17,11 +17,13 @@
     <a href="#home">Home</a>
     <a href="#invitation">Invitation</a>
     <a href="#guests">Guests</a>
+    <a href="#gallery">Gallery</a>
     <a href="#family">Family</a>
+    <button class="theme-btn" onclick="toggleTheme()">🌙</button>
 </nav>
 
 <!-- HERO -->
-<section id="home" class="hero section">
+<section id="home" class="section hero">
     <h1>Khushi <span>&</span> Niwash</h1>
     <p class="subtitle">Together with their families</p>
     <p class="tagline">Request the pleasure of your presence at their wedding</p>
@@ -30,10 +32,18 @@
         <span>📅 14 February 2026</span>
         <span>📍 Grand Convention Hall</span>
     </div>
+
+    <p id="countdown" class="countdown"></p>
+
+    <a class="calendar-btn"
+       target="_blank"
+       href="https://www.google.com/calendar/render?action=TEMPLATE&text=Wedding+of+Khushi+and+Niwash&dates=20260214/20260214&details=Wedding+Celebration&location=Grand+Convention+Hall">
+       🗓 Add to Google Calendar
+    </a>
 </section>
 
 <!-- INVITATION -->
-<section id="invitation" class="section light">
+<section id="invitation" class="section soft-dark">
     <h2>Wedding Invitation</h2>
     <p class="text">
         With great joy and happiness,<br>
@@ -41,6 +51,10 @@
         to bless us on the auspicious occasion<br>
         of our wedding.
     </p>
+
+    <a href="invite.pdf" class="calendar-btn" download>
+        🖨 Download Invitation (PDF)
+    </a>
 </section>
 
 <!-- GUESTS -->
@@ -52,8 +66,18 @@
     </p>
 </section>
 
+<!-- GALLERY -->
+<section id="gallery" class="section soft-dark">
+    <h2>Our Moments</h2>
+    <div class="gallery">
+        <img src="photo1.jpg" alt="">
+        <img src="photo2.jpg" alt="">
+        <img src="photo3.jpg" alt="">
+    </div>
+</section>
+
 <!-- FAMILY -->
-<section id="family" class="section light">
+<section id="family" class="section dark">
     <h2>With Blessings Of</h2>
 
     <div class="family-cards">
@@ -68,6 +92,13 @@
         </div>
     </div>
 </section>
+
+<!-- MUSIC -->
+<audio id="bg-music" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<button class="music-btn" onclick="toggleMusic()">🎵</button>
 
 <script src="script.js"></script>
 </body>

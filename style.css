@@ -24,7 +24,7 @@ body {
 
 .navbar a {
     color: #38bdf8;
-    margin: 0 14px;
+    margin: 0 12px;
     text-decoration: none;
     font-weight: 500;
 }
@@ -32,8 +32,8 @@ body {
 /* HERO */
 .hero {
     height: 100vh;
-    text-align: center;
     padding-top: 120px;
+    text-align: center;
 }
 
 .hero h1 {
@@ -49,21 +49,25 @@ body {
 .subtitle {
     margin-top: 10px;
     font-style: italic;
-    opacity: 0.9;
-}
-
-.tagline {
-    margin-top: 20px;
-    font-size: 1rem;
     opacity: 0.85;
 }
 
+.tagline {
+    margin-top: 18px;
+    opacity: 0.9;
+}
+
 .hero-details {
-    margin-top: 30px;
+    margin-top: 28px;
     display: flex;
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
+}
+
+.countdown {
+    margin-top: 20px;
+    font-size: 1.1rem;
 }
 
 /* SECTIONS */
@@ -91,20 +95,43 @@ body {
     max-width: 600px;
     margin: auto;
     line-height: 1.8;
-    font-size: 1rem;
 }
 
-/* LIGHT / DARK */
-.light {
-    background: #f9f7f3;
-    color: #1f2933;
-}
-
+/* BACKGROUNDS */
 .dark {
     background: #020617;
 }
 
-/* FAMILY CARDS */
+.soft-dark {
+    background: linear-gradient(180deg, #020617, #030b2a);
+}
+
+/* BUTTONS */
+.calendar-btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 10px 18px;
+    background: #38bdf8;
+    color: black;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* GALLERY */
+.gallery {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding: 20px;
+}
+
+.gallery img {
+    height: 220px;
+    border-radius: 12px;
+}
+
+/* FAMILY */
 .family-cards {
     display: flex;
     justify-content: center;
@@ -114,12 +141,38 @@ body {
 }
 
 .card {
-    background: white;
-    color: #1f2933;
+    background: #0f172a;
     padding: 20px;
     border-radius: 12px;
     width: 220px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* MUSIC */
+.music-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #38bdf8;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+}
+
+/* THEME */
+.theme-btn {
+    position: absolute;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #38bdf8;
+}
+
+.light-mode {
+    background: #f9fcff;
+    color: #020617;
 }
 
 /* MOBILE */

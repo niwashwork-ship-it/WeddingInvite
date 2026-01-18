@@ -1,4 +1,4 @@
-// Smooth scroll reveal
+/* Scroll animation */
 const sections = document.querySelectorAll(".section");
 
 const observer = new IntersectionObserver(entries => {
@@ -10,3 +10,30 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.2 });
 
 sections.forEach(section => observer.observe(section));
+
+/* Countdown */
+const weddingDate = new Date("February 14, 2026 00:00:00").getTime();
+
+setInterval(() => {
+    const now = new Date().getTime();
+    const diff = weddingDate - now;
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    document.getElementById("countdown").innerText =
+        days > 0 ? `⏳ ${days} days to go` : "🎉 Wedding Day!";
+}, 1000);
+
+/* Music */
+const music = document.getElementById("bg-music");
+let playing = false;
+
+function toggleMusic() {
+    if (!playing) music.play();
+    else music.pause();
+    playing = !playing;
+}
+
+/* Theme */
+function toggleTheme() {
+    document.body.classList.toggle("light-mode");
+}
