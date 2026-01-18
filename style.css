@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+body {
+    background: #020617;
+    color: #e5e7eb;
+}
+
+/* Navigation */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #020617;
+    padding: 12px;
+    text-align: center;
+    z-index: 1000;
+}
+
+nav a {
+    color: #38bdf8;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Sections */
+.section {
+    min-height: 100vh;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #a5f3fc;
+}
+
+pre {
+    text-align: left;
+    background: #020617;
+    color: #38bdf8;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 700px;
+    margin: auto;
+}
+
+.center {
+    margin-top: 20px;
+    font-size: 16px;
+}
