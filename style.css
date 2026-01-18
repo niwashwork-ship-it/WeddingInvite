@@ -188,3 +188,25 @@ footer {
   50% { transform: scale(1.08); }
   100% { transform: scale(1); }
 }
+
+/* Click me hint */
+#music-hint {
+  position: fixed;
+  bottom: 80px;
+  right: 14px;
+  background: rgba(255,255,255,0.9);
+  color: #b00060;
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: 14px;
+  font-weight: 600;
+  animation: hintBlink 1s infinite;
+  z-index: 9999;
+}
+
+/* Hint blinking */
+@keyframes hintBlink {
+  0%,100% { opacity: 1; }
+  50% { opacity: 0.25; }
+}
+
