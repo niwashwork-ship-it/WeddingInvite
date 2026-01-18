@@ -152,3 +152,40 @@ function createFlower() {
 
 // Create flowers gently (not too many)
 setInterval(createFlower, 600);
+
+
+
+/* =====================================================
+   BACKGROUND MUSIC (MOBILE SAFE)
+===================================================== */
+
+const musicBtn = document.getElementById("music-btn");
+const bgMusic = document.getElementById("bg-music");
+
+let musicStarted = false;
+
+// Start music on button click
+musicBtn.addEventListener("click", () => {
+  if (!musicStarted) {
+    bgMusic.play();
+    musicStarted = true;
+    musicBtn.classList.add("playing");
+  } else {
+    if (bgMusic.paused) {
+      bgMusic.play();
+      musicBtn.classList.add("playing");
+    } else {
+      bgMusic.pause();
+      musicBtn.classList.remove("playing");
+    }
+  }
+});
+
+// OPTIONAL: start music on first user tap anywhere
+document.addEventListener("click", () => {
+  if (!musicStarted) {
+    bgMusic.play().catch(() => {});
+    musicStarted = true;
+    musicBtn.classList.add("playing");
+  }
+}, { once: true });
