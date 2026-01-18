@@ -127,27 +127,53 @@ footer {
 }
 
 /* home */
+/* ================= FAMILY DETAILS – BIG & ELEGANT ================= */
+
 .family-details {
-  margin-top: 20px;
-  line-height: 1.6;
+  margin: 60px auto;
+  max-width: 90%;
+  text-align: center;
+  line-height: 1.8;
 }
 
-.person strong {
-  font-size: 24px;
+.family-details .person {
+  margin: 22px 0;
+}
+
+.family-details .person strong {
+  font-size: 32px;              /* BIG NAMES */
+  font-weight: 700;
   color: #3a0b1f;
+  display: block;
 }
 
-.person span {
-  font-size: 16px;
+.family-details .person span {
+  font-size: 20px;              /* PARENTS CLEAR */
   color: #6b1230;
-  opacity: 0.85;
+  opacity: 0.9;
 }
 
 .weds-text {
-  font-size: 18px;
-  margin: 10px 0;
+  font-size: 24px;              /* CLEAR WEDS */
+  margin: 18px 0;
   font-style: italic;
   color: #7a1f3d;
+  letter-spacing: 1px;
+}
+
+/* MOBILE EXTRA BOOST */
+@media (max-width: 768px) {
+  .family-details .person strong {
+    font-size: 34px;
+  }
+
+  .family-details .person span {
+    font-size: 19px;
+  }
+
+  .weds-text {
+    font-size: 22px;
+  }
 }
 
 /* MOBILE */
