@@ -117,42 +117,42 @@ window.addEventListener("load", () => {
   if (img) {
     img.style.width = "100%";
     img.style.height = "100vh";
-    img.style.objectFit = "contain"; // ensures FULL IMAGE always visible
-  }
-});
+    img.style.objectFit = "contain"; // ensures 
 
 
 /* =====================================================
-   FLOWER SHOWER (ONLY ON BLESSING PAGE)
+   MULTI-FLOWER | SINGLE COLOR | PREMIUM
 ===================================================== */
 
-const flowerContainer = document.getElementById("flower-container");
-const blessingSection = document.getElementById("blessing");
+const flowers = ["🌸", "🌺", "🌹", "🌼"]; // multiple shapes
 
 function createFlower() {
   if (!flowerContainer || !blessingSection) return;
 
-  // Stop flowers once user scrolls past blessing page
+  // Stop flowers after blessing section
   if (window.scrollY > blessingSection.offsetHeight) return;
 
-  const flower = document.createElement("span");
-  flower.classList.add("flower");
-  flower.innerText = "🌸";
+  // Two flowers per cycle (rich but smooth)
+  for (let i = 0; i < 2; i++) {
+    const flower = document.createElement("span");
+    flower.classList.add("flower");
 
-  flower.style.left = Math.random() * 100 + "vw";
-  flower.style.animationDuration = 6 + Math.random() * 4 + "s";
-  flower.style.fontSize = 14 + Math.random() * 10 + "px";
+    // Random flower shape ONLY
+    flower.innerText = flowers[Math.floor(Math.random() * flowers.length)];
 
-  flowerContainer.appendChild(flower);
+    flower.style.left = Math.random() * 100 + "vw";
+    flower.style.animationDuration = "6s"; // SAME SPEED
 
-  setTimeout(() => {
-    flower.remove();
-  }, 10000);
+    flowerContainer.appendChild(flower);
+
+    setTimeout(() => {
+      flower.remove();
+    }, 7000);
+  }
 }
 
-// Create flowers gently (not too many)
-setInterval(createFlower, 600);
-
+// Premium density
+setInterval(createFlower, 300);
 
 /* =====================================================
    BACKGROUND MUSIC (MOBILE SAFE + ATTENTION BLINK)
