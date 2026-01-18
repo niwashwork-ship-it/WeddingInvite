@@ -129,50 +129,52 @@ footer {
 /* home */
 /* ================= FAMILY DETAILS – BIG & ELEGANT ================= */
 
+/* ================= FAMILY DETAILS – BALANCED WEDDING CARD ================= */
+
 .family-details {
-  margin: 60px auto;
+  margin: 40px auto;
   max-width: 90%;
   text-align: center;
-  line-height: 1.8;
+  line-height: 1.7;
 }
 
 .family-details .person {
-  margin: 22px 0;
+  margin: 16px 0;
 }
 
 .family-details .person strong {
-  font-size: 32px;              /* BIG NAMES */
-  font-weight: 700;
+  font-size: 28px;
+  font-weight: 600;
   color: #3a0b1f;
   display: block;
 }
 
 .family-details .person span {
-  font-size: 20px;              /* PARENTS CLEAR */
+  font-size: 17px;
   color: #6b1230;
-  opacity: 0.9;
+  opacity: 0.85;
 }
 
 .weds-text {
-  font-size: 24px;              /* CLEAR WEDS */
-  margin: 18px 0;
+  font-size: 20px;
+  margin: 14px 0;
   font-style: italic;
   color: #7a1f3d;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
 }
 
-/* MOBILE EXTRA BOOST */
+/* MOBILE */
 @media (max-width: 768px) {
   .family-details .person strong {
-    font-size: 34px;
+    font-size: 30px;
   }
 
   .family-details .person span {
-    font-size: 19px;
+    font-size: 16px;
   }
 
   .weds-text {
-    font-size: 22px;
+    font-size: 19px;
   }
 }
 
@@ -217,6 +219,70 @@ footer {
     opacity: 0;
   }
 }
+
+
+/* ================= ADD TO CALENDAR ================= */
+
+.calendar-box {
+  margin-top: 30px;
+  padding: 24px;
+  border-radius: 20px;
+  background: rgba(255, 235, 245, 0.8);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.calendar-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 18px;
+  color: #7a1f3d;
+}
+
+.calendar-btn {
+  display: block;
+  margin: 12px auto;
+  padding: 12px 22px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #f7c6d9, #e8b4e8);
+  color: #3a0b1f;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.calendar-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+
+/* ================= GO TO MAP ================= */
+
+.map-box {
+  margin-top: 22px;
+  text-align: center;
+}
+
+.map-btn {
+  display: inline-block;
+  padding: 12px 26px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #f7c6d9, #e8b4e8);
+  color: #3a0b1f;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.map-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.18);
+}
+
 
 /* ================= MUSIC BUTTON ================= */
 
