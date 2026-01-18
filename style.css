@@ -1,3 +1,55 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Georgia, serif;
+}
+
+/* BODY */
+body {
+  background: linear-gradient(180deg, #f9c5d1, #d8b4f8);
+  color: #4a2c2a;
+  overflow-x: hidden;
+}
+
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255, 230, 240, 0.95);
+  padding: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  z-index: 100;
+}
+
+.navbar a {
+  color: #7a3e4c;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+/* ---------------- DIVINE BLESSING PAGE ---------------- */
+
+.blessing {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #fde2e4, #f8cdda);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 70px;
+}
+
+.blessing-content {
+  padding: 20px;
+  animation: fadeUp 2s ease;
+}
+
 /* BELL */
 .bell {
   width: 70px;
@@ -5,18 +57,19 @@
   animation: bellSwing 2.5s ease-in-out infinite;
 }
 
-@keyframes bellSwing {
-  0% { transform: rotate(0deg); }
-  25% { transform: rotate(6deg); }
-  50% { transform: rotate(0deg); }
-  75% { transform: rotate(-6deg); }
-  100% { transform: rotate(0deg); }
+/* GANESHA IMAGE */
+.blessing-img {
+  max-width: 260px;
+  border-radius: 20px;
+  margin: 15px 0;
+  animation: glow 4s infinite;
 }
 
 /* DIYA */
 .diya-wrapper {
   position: relative;
-  margin: 20px auto;
+  margin: 18px auto;
+  width: 90px;
 }
 
 .diya {
@@ -30,12 +83,144 @@
   width: 16px;
   height: 28px;
   background: radial-gradient(circle, #ffd36a, #ff6a00);
-  border-radius: 50% 50% 50% 50%;
+  border-radius: 50%;
   transform: translateX(-50%);
   animation: flicker 0.15s infinite alternate;
 }
 
+/* SANSKRIT TEXT */
+.sanskrit {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  margin-top: 12px;
+}
+
+.bless-text {
+  font-style: italic;
+  margin-top: 6px;
+}
+
+/* ---------------- HOME / HERO ---------------- */
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 70px;
+}
+
+.hero-content {
+  text-align: center;
+  padding: 20px;
+  animation: fadeUp 2s ease;
+}
+
+.names {
+  font-size: 3rem;
+  letter-spacing: 2px;
+}
+
+.sanskrit-small {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: #7a2e2e;
+}
+
+.italic {
+  font-style: italic;
+  margin-top: 10px;
+}
+
+.text {
+  margin: 20px 0;
+}
+
+.details p {
+  margin: 8px 0;
+}
+
+/* ---------------- COMMON SECTIONS ---------------- */
+
+.section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.section h2 {
+  margin-bottom: 20px;
+}
+
+.soft {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* GALLERY IMAGE */
+.ganesha-wrapper img {
+  max-width: 320px;
+  border-radius: 20px;
+  animation: glow 4s infinite;
+}
+
+/* LOCATION */
+#location iframe {
+  margin-top: 20px;
+}
+
+/* ---------------- ANIMATIONS ---------------- */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow {
+  50% {
+    box-shadow: 0 0 30px rgba(247, 156, 161, 0.5);
+  }
+}
+
+@keyframes bellSwing {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(6deg); }
+  50% { transform: rotate(0deg); }
+  75% { transform: rotate(-6deg); }
+  100% { transform: rotate(0deg); }
+}
+
 @keyframes flicker {
-  from { transform: translateX(-50%) scale(1); opacity: 0.8; }
-  to { transform: translateX(-50%) scale(1.1); opacity: 1; }
+  from {
+    transform: translateX(-50%) scale(1);
+    opacity: 0.8;
+  }
+  to {
+    transform: translateX(-50%) scale(1.1);
+    opacity: 1;
+  }
+}
+
+/* ---------------- MOBILE ---------------- */
+
+@media (max-width: 600px) {
+  .names {
+    font-size: 2.2rem;
+  }
+
+  .sanskrit {
+    font-size: 1.1rem;
+  }
+
+  .blessing-img {
+    max-width: 220px;
+  }
+
+  .ganesha-wrapper img {
+    max-width: 260px;
+  }
 }
