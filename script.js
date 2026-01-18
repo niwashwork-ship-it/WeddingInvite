@@ -119,7 +119,7 @@ window.addEventListener("load", () => {
 /* =====================================================
    FLOWER SHOWER (PINK–LAVENDER, PREMIUM)
 ===================================================== */
-const flowers = ["🌸", "🌹"];
+const flowers = ["🌸","🌺"];
 
 function createFlower() {
   if (!flowerContainer || !blessingSection) return;
