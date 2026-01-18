@@ -162,7 +162,7 @@ footer {
 
 @keyframes fall {
   to {
-    transform: translateY(110vh) rotate(360deg);
+    transform: translateY(110vh) rotate(180deg);
     opacity: 0;
   }
 }
