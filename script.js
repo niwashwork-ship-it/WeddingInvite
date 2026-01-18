@@ -165,7 +165,7 @@ const musicHint = document.getElementById("music-hint");
 let musicStarted = false;
 
 // Set soft volume
-bgMusic.volume = 0.25;
+bgMusic.volume = 0.10;
 
 // Start with blinking to attract attention
 musicBtn.classList.add("playing");
