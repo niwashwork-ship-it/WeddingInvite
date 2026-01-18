@@ -2,60 +2,129 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: monospace;
 }
 
 body {
+    font-family: 'Poppins', sans-serif;
     background: #020617;
     color: #e5e7eb;
+    scroll-behavior: smooth;
 }
 
-/* Navigation */
-nav {
+/* NAVBAR */
+.navbar {
     position: fixed;
     top: 0;
     width: 100%;
-    background: #020617;
-    padding: 12px;
+    background: rgba(2, 6, 23, 0.9);
+    padding: 14px;
     text-align: center;
     z-index: 1000;
 }
 
-nav a {
+.navbar a {
     color: #38bdf8;
-    margin: 0 15px;
+    margin: 0 14px;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 500;
 }
 
-/* Sections */
-.section {
-    min-height: 100vh;
-    padding: 100px 20px;
+/* HERO */
+.hero {
+    height: 100vh;
     text-align: center;
+    padding-top: 120px;
 }
 
 .hero h1 {
-    font-size: 40px;
-    margin-bottom: 10px;
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    letter-spacing: 2px;
 }
 
-.hero p {
-    font-size: 18px;
-    color: #a5f3fc;
+.hero span {
+    margin: 0 10px;
 }
 
-pre {
-    text-align: left;
-    background: #020617;
-    color: #38bdf8;
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 700px;
-    margin: auto;
+.subtitle {
+    margin-top: 10px;
+    font-style: italic;
+    opacity: 0.9;
 }
 
-.center {
+.tagline {
     margin-top: 20px;
-    font-size: 16px;
+    font-size: 1rem;
+    opacity: 0.85;
+}
+
+.hero-details {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* SECTIONS */
+.section {
+    min-height: 100vh;
+    padding: 120px 20px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+.section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.text {
+    max-width: 600px;
+    margin: auto;
+    line-height: 1.8;
+    font-size: 1rem;
+}
+
+/* LIGHT / DARK */
+.light {
+    background: #f9f7f3;
+    color: #1f2933;
+}
+
+.dark {
+    background: #020617;
+}
+
+/* FAMILY CARDS */
+.family-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.card {
+    background: white;
+    color: #1f2933;
+    padding: 20px;
+    border-radius: 12px;
+    width: 220px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    .hero h1 {
+        font-size: 2.2rem;
+    }
 }
