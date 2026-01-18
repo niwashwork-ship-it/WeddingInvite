@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Khushi ❤️ Niwash | Wedding Invitation</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>Khushi & Niwash | Wedding</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="style.css">
 </head>
@@ -15,79 +12,49 @@
 <!-- NAVBAR -->
 <nav class="navbar">
   <a href="#home">Home</a>
-  <a href="#invitation">Invitation</a>
-  <a href="#guests">Guests</a>
-  <a href="#gallery">Gallery</a>
-  <a href="#family">Family</a>
+  <a href="#blessings">Blessings</a>
+  <span id="themeToggle">🌙</span>
 </nav>
 
-<!-- HERO -->
-<section id="home" class="section hero">
-  <h1>Khushi <span>&</span> Niwash</h1>
-  <p class="subtitle">Together with their families</p>
-  <p class="tagline">Request the pleasure of your presence at their wedding</p>
+<!-- HOME SECTION -->
+<section id="home" class="hero">
+  <div class="hero-content">
+    <h1>Khushi & Niwash</h1>
+    <p class="italic">Together with their families</p>
+    <p class="text">
+      Request the pleasure of your presence at their wedding
+    </p>
 
-  <div class="hero-details">
-    <span>📅 14 February 2026</span>
-    <span>📍 Grand Convention Hall</span>
+    <div class="details">
+      <p>📅 20 February 2026</p>
+      <p>📍 Pape’s Lawn</p>
+      <p>⏳ <span id="countdown"></span></p>
+    </div>
+
+    <a class="btn"
+       href="https://www.google.com/calendar/render?action=TEMPLATE&text=Khushi+%26+Niwash+Wedding&dates=20260220T000000Z/20260220T235900Z&location=Pape’s+Lawn"
+       target="_blank">
+      📅 Add to Google Calendar
+    </a>
   </div>
-
-  <p id="countdown" class="countdown"></p>
-
-  <a class="calendar-btn"
-     target="_blank"
-     href="https://www.google.com/calendar/render?action=TEMPLATE&text=Wedding+of+Khushi+and+Niwash&dates=20260214/20260214&details=Wedding+Celebration&location=Grand+Convention+Hall">
-    🗓 Add to Google Calendar
-  </a>
 </section>
 
-<!-- INVITATION -->
-<section id="invitation" class="section">
-  <h2>Wedding Invitation</h2>
-  <p class="text">
-    With great joy and happiness,<br>
-    we invite you and your family<br>
-    to bless us on the auspicious occasion<br>
-    of our wedding.
-  </p>
-</section>
-
-<!-- GUESTS -->
-<section id="guests" class="section">
-  <h2>Dear Guests</h2>
-  <p class="text">
-    Your presence will make our celebration truly special.<br>
-    We look forward to sharing love, laughter and memories with you.
-  </p>
-</section>
-
-<!-- GANESHA BLESSING -->
-<section id="gallery" class="section">
+<!-- GANESHA BLESSINGS -->
+<section id="blessings" class="section">
   <h2>Divine Blessings</h2>
-
   <div class="ganesha-wrapper">
-    <img src="photo1.jpg"
-         alt="Ganesha blessing the couple"
-         class="ganesha-img">
+    <img src="photo1.jpg" alt="Ganesha blessing the couple">
   </div>
 </section>
 
-<!-- FAMILY -->
-<section id="family" class="section">
-  <h2>With Blessings Of</h2>
+<!-- MUSIC -->
+<button id="musicBtn">🎵</button>
+<audio id="bgMusic" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
 
-  <div class="family-cards">
-    <div class="card">
-      <h3>Bride’s Family</h3>
-      <p>Khushi’s parents & family</p>
-    </div>
-
-    <div class="card">
-      <h3>Groom’s Family</h3>
-      <p>Niwash’s parents & family</p>
-    </div>
-  </div>
-</section>
+<!-- PETALS -->
+<div id="petals"></div>
 
 <script src="script.js"></script>
 </body>
