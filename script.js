@@ -120,3 +120,35 @@ window.addEventListener("load", () => {
     img.style.objectFit = "contain"; // ensures FULL IMAGE always visible
   }
 });
+
+
+/* =====================================================
+   FLOWER SHOWER (ONLY ON BLESSING PAGE)
+===================================================== */
+
+const flowerContainer = document.getElementById("flower-container");
+const blessingSection = document.getElementById("blessing");
+
+function createFlower() {
+  if (!flowerContainer || !blessingSection) return;
+
+  // Stop flowers once user scrolls past blessing page
+  if (window.scrollY > blessingSection.offsetHeight) return;
+
+  const flower = document.createElement("span");
+  flower.classList.add("flower");
+  flower.innerText = "🌸";
+
+  flower.style.left = Math.random() * 100 + "vw";
+  flower.style.animationDuration = 6 + Math.random() * 4 + "s";
+  flower.style.fontSize = 14 + Math.random() * 10 + "px";
+
+  flowerContainer.appendChild(flower);
+
+  setTimeout(() => {
+    flower.remove();
+  }, 10000);
+}
+
+// Create flowers gently (not too many)
+setInterval(createFlower, 600);
