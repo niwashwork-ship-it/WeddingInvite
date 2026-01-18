@@ -154,38 +154,56 @@ function createFlower() {
 setInterval(createFlower, 600);
 
 
-
 /* =====================================================
-   BACKGROUND MUSIC (MOBILE SAFE)
+   BACKGROUND MUSIC (MOBILE SAFE + ATTENTION BLINK)
 ===================================================== */
 
 const musicBtn = document.getElementById("music-btn");
 const bgMusic = document.getElementById("bg-music");
+const musicHint = document.getElementById("music-hint");
 
 let musicStarted = false;
 
-// Start music on button click
+// Set soft volume
+bgMusic.volume = 0.25;
+
+// Start with blinking to attract attention
+musicBtn.classList.add("playing");
+
+// Start / toggle music on button click
 musicBtn.addEventListener("click", () => {
   if (!musicStarted) {
-    bgMusic.play();
+    bgMusic.play().catch(() => {});
     musicStarted = true;
-    musicBtn.classList.add("playing");
+
+    // Stop blinking + hide hint after first click
+    musicBtn.classList.remove("playing");
+    musicHint.style.display = "none";
   } else {
     if (bgMusic.paused) {
-      bgMusic.play();
-      musicBtn.classList.add("playing");
+      bgMusic.play().catch(() => {});
+      musicBtn.classList.remove("playing");
+      musicHint.style.display = "none";
     } else {
       bgMusic.pause();
-      musicBtn.classList.remove("playing");
+
+      // Resume blinking + hint if paused
+      musicBtn.classList.add("playing");
+      musicHint.style.display = "block";
     }
   }
 });
 
-// OPTIONAL: start music on first user tap anywhere
-document.addEventListener("click", () => {
-  if (!musicStarted) {
-    bgMusic.play().catch(() => {});
-    musicStarted = true;
-    musicBtn.classList.add("playing");
-  }
-}, { once: true });
+// OPTIONAL: start music on first user tap anywhere (mobile support)
+document.addEventListener(
+  "click",
+  () => {
+    if (!musicStarted) {
+      bgMusic.play().catch(() => {});
+      musicStarted = true;
+      musicBtn.classList.remove("playing");
+      musicHint.style.display = "none";
+    }
+  },
+  { once: true }
+);
