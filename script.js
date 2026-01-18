@@ -119,13 +119,13 @@ window.addEventListener("load", () => {
 /* =====================================================
    FLOWER SHOWER (PINK–LAVENDER, PREMIUM)
 ===================================================== */
-const flowers = ["🌸", "🌺", "🌹", "🌼"];
+const flowers = ["🌸", "🌹"];
 
 function createFlower() {
   if (!flowerContainer || !blessingSection) return;
   if (window.scrollY > blessingSection.offsetHeight) return;
 
-  for (let i = 0; i < 2; i++) {
+  for (let i = 0; i < 1; i++) {
     const flower = document.createElement("span");
     flower.className = "flower";
     flower.innerText = flowers[Math.floor(Math.random() * flowers.length)];
@@ -145,7 +145,7 @@ setInterval(() => {
   } catch (e) {
     console.warn("Flower skipped safely");
   }
-}, 300);
+}, 700);
 
 /* =====================================================
    BACKGROUND MUSIC (MOBILE SAFE + BLINK)
