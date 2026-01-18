@@ -147,12 +147,17 @@ footer {
   z-index: 5;
 }
 
+/* ================= PREMIUM PINK–LAVENDER FLOWERS ================= */
+
 .flower {
   position: absolute;
   top: -40px;
-  font-size: 20px;
-  opacity: 0.8;
+  font-size: 22px;                 /* SAME SIZE */
+  opacity: 0.55;                   /* SOFT TRANSPARENCY */
+  filter: hue-rotate(285deg)       /* PINK–LAVENDER */
+          saturate(115%);
   animation: fall linear forwards;
+  pointer-events: none;
 }
 
 @keyframes fall {
