@@ -10,18 +10,46 @@
 
 <!-- NAVBAR -->
 <nav class="navbar">
+  <a href="#blessing">Blessing</a>
   <a href="#home">Home</a>
   <a href="#invitation">Invitation</a>
   <a href="#gallery">Gallery</a>
   <a href="#family">Family</a>
-  <span id="themeToggle">🌙</span>
+  <a href="#location">Location</a>
 </nav>
 
-<!-- HOME / HERO -->
+<!-- DIVINE BLESSING PAGE -->
+<section id="blessing" class="blessing">
+  <div class="blessing-content">
+
+    <!-- Bell -->
+    <img src="bell.png" class="bell" alt="Temple Bell">
+
+    <!-- Ganesha -->
+    <img src="photo1.jpg" alt="Lord Ganesha Blessing" class="blessing-img">
+
+    <!-- Diya -->
+    <div class="diya-wrapper">
+      <img src="diya.png" class="diya" alt="Diya">
+      <span class="flame"></span>
+    </div>
+
+    <p class="sanskrit">
+      ॐ गणेशाय नमः<br>
+      विघ्नेश्वरः सदा पन्थानं दर्शयतु
+    </p>
+
+    <p class="bless-text">
+      With the divine blessings of Lord Ganesha
+    </p>
+  </div>
+</section>
+
+<!-- HOME -->
 <section id="home" class="hero">
   <div class="hero-content">
     <h1 class="names">Khushi weds Niwash</h1>
-    <p class="sanskrit">ॐ शुभमस्तु</p>
+    <p class="sanskrit-small">ॐ शुभमस्तु</p>
     <p class="italic">Together with their families</p>
 
     <p class="text">
@@ -33,12 +61,6 @@
       <p>📍 Pape’s Lawn</p>
       <p>⏳ <span id="countdown"></span></p>
     </div>
-
-    <a class="btn"
-       href="https://www.google.com/calendar/render?action=TEMPLATE&text=Khushi+Weds+Niwash&dates=20260220T000000Z/20260220T235900Z&location=Pape’s+Lawn"
-       target="_blank">
-      📅 Add to Google Calendar
-    </a>
   </div>
 </section>
 
@@ -46,16 +68,16 @@
 <section id="invitation" class="section soft">
   <h2>Wedding Invitation</h2>
   <p>
-    With great joy and happiness, we invite you and your family to bless us
-    on the auspicious occasion of our wedding.
+    With great joy and happiness, we invite you and your family
+    to bless us on the auspicious occasion of our wedding.
   </p>
 </section>
 
-<!-- GALLERY / DIVINE -->
+<!-- GALLERY -->
 <section id="gallery" class="section">
-  <h2>Divine Blessings</h2>
+  <h2>Divine Moments</h2>
   <div class="ganesha-wrapper">
-    <img src="photo1.PNG" alt="Ganesha blessing the couple">
+    <img src="photo1.jpg" alt="Ganesha Blessing">
   </div>
 </section>
 
@@ -63,19 +85,25 @@
 <section id="family" class="section soft">
   <h2>With Blessings Of</h2>
   <p>
-    Our beloved parents, elders, and family members whose love and guidance
-    have brought us here.
+    Our beloved parents, elders, and family members whose love
+    and guidance have shaped our journey.
   </p>
 </section>
 
-<!-- MUSIC -->
-<button id="musicBtn">🎵</button>
-<audio id="bgMusic" loop>
-  <source src="music.mp3" type="audio/mpeg">
-</audio>
+<!-- LOCATION -->
+<section id="location" class="section">
+  <h2>Wedding Location</h2>
+  <p>Papè Lawn | Andheri East</p>
 
-<!-- PETALS -->
-<div id="petals"></div>
+  <iframe
+    src="https://www.google.com/maps?q=Papè%20Lawn%20Andheri%20East&output=embed"
+    width="100%"
+    height="350"
+    style="border:0; border-radius:16px;"
+    allowfullscreen=""
+    loading="lazy">
+  </iframe>
+</section>
 
 <script src="script.js"></script>
 </body>
