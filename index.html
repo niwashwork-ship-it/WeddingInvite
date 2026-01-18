@@ -82,23 +82,35 @@
     📍 <b>Papè Lawn, Andheri East</b>
   </p>
   
-  <!-- ADD TO CALENDAR -->
-<div class="calendar-box">
-  <p class="calendar-title">Save the Date</p>
-
-  <!-- Google Calendar -->
-  <a class="calendar-btn google" target="_blank"
-     href="https://www.google.com/calendar/render?action=TEMPLATE
-     &text=Khushi+weds+Niwash
-     &dates=20260220T113000/20260220T153000
-     &details=Wedding+Ceremony+of+Khushi+and+Niwash
-     &location=Papè+Lawn,+Andheri+East">
-     Add to Google Calendar
+<!-- ADD TO CALENDAR -->
+<div class="calendar-buttons">
+  <a
+    class="calendar-btn google"
+    href="https://calendar.google.com/calendar/render?action=TEMPLATE
+    &text=Khushi+weds+Niwash
+    &dates=20260220T113000/20260220T153000
+    &details=Wedding+Ceremony+of+Khushi+and+Niwash
+    &location=Pape+Lawn+Andheri+East"
+    target="_blank"
+  >
+    📅 Add to Google Calendar
   </a>
 
-  <!-- Apple / Outlook -->
-  <a class="calendar-btn apple" href="wedding.ics" download>
-    Add to Apple / Outlook Calendar
+  <a
+    class="calendar-btn apple"
+    href="data:text/calendar;charset=utf8,
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+SUMMARY:Khushi weds Niwash
+DTSTART:20260220T113000
+DTEND:20260220T153000
+LOCATION:Pape Lawn Andheri East
+END:VEVENT
+END:VCALENDAR"
+    download="Khushi-Niwash-Wedding.ics"
+  >
+    🍎 Add to Apple Calendar
   </a>
 </div>
   
