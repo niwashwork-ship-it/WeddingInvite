@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Khushi weds Niwash</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<!-- 🌸 FLOWER SHOWER -->
+<div id="flower-container"></div>
+
+<!-- 🎵 MUSIC -->
+<button id="music-btn" aria-label="Toggle music">🎵</button>
+<div id="music-hint">Click me 🎵</div>
+<audio id="bg-music" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a href="#blessing">Blessing</a>
+  <a href="#home">Home</a>
+  <a href="#invitation">Invitation</a>
+  <a href="#venue">Venue</a>
+</nav>
+
+<!-- BLESSING / FIRST PAGE -->
+<section id="blessing" class="blessing">
+  <img src="photo1.PNG" alt="Lord Ganesha Blessing" class="blessing-image">
+
+  <div class="blessing-overlay">
+    <div class="sanskrit-main">ॐ गणेशाय नमः</div>
+    <div class="sanskrit-sub">
+      विघ्नेश्वरः सदा पन्थानं दर्शयतु
+    </div>
+    <div class="scroll-down">Scroll ↓</div>
+  </div>
+</section>
+
+<!-- HOME -->
+<section id="home" class="section soft">
+  <h1>Khushi <span>weds</span> Niwash</h1>
+  <p class="subtitle">Together with their families</p>
+</section>
+
+<!-- INVITATION -->
+<section id="invitation" class="section">
+  <h2>Wedding Invitation</h2>
+  <p class="invite-text">
+    Request the pleasure of your presence<br>
+    at the auspicious wedding ceremony
+  </p>
+
+  <p class="details">
+    📅 <b>20 February 2026</b><br>
+    📍 <b>Papè Lawn, Andheri East</b>
+  </p>
+</section>
+
+<!-- VENUE -->
+<section id="venue" class="section soft">
+  <h2>Venue</h2>
+
+  <iframe
+    src="https://www.google.com/maps?q=Papè%20Lawn%20Andheri%20East&output=embed"
+    width="100%"
+    height="320"
+    style="border:0; border-radius:14px;"
+    loading="lazy">
+  </iframe>
+</section>
+
+<footer>
+  <p>With love ❤️ | Khushi & Niwash</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
