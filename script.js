@@ -131,7 +131,7 @@ function createFlower() {
     flower.innerText = flowers[Math.floor(Math.random() * flowers.length)];
 
     flower.style.left = Math.random() * 100 + "vw";
-    flower.style.animationDuration = "6s";
+    flower.style.animationDuration = "12s";
 
     flowerContainer.appendChild(flower);
 
