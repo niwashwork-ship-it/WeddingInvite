@@ -1,175 +1,135 @@
-/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Georgia, serif;
 }
 
-/* BODY */
 body {
-  background: linear-gradient(180deg, #f9c5d1, #e3c6f7);
-  color: #4a2c2a;
-  overflow-x: hidden;
-  padding-top: 60px;
+  font-family: "Cormorant Garamond", serif;
+  scroll-behavior: smooth;
 }
 
-/* ================= NAVBAR ================= */
-
-.navbar {
+/* NAVBAR */
+#navbar {
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 12px 0;
+  padding: 14px 20px;
   display: flex;
   justify-content: center;
-  gap: 22px;
-  z-index: 9999;
-  transition: all 0.4s ease;
+  gap: 24px;
+  background: rgba(255, 230, 240, 0.9);
+  backdrop-filter: blur(6px);
+  z-index: 100;
+  transition: top 0.3s ease;
 }
 
-.navbar a {
+#navbar a {
   text-decoration: none;
   font-weight: 600;
-  font-size: 15px;
-  color: #7a2e4f;
+  color: #6b1230;
 }
 
-/* NAVBAR STATES */
-.navbar.hide {
-  transform: translateY(-100%);
-}
-
-.navbar.pink {
-  background: rgba(255, 230, 240, 0.95);
-}
-
-.navbar.lavender {
-  background: rgba(232, 214, 255, 0.95);
-}
-
-.navbar.light {
-  background: rgba(255, 255, 255, 0.95);
-}
-
-/* ================= BLESSING (FULL SCREEN IMAGE) ================= */
-
+/* BLESSING PAGE */
 .blessing {
-  min-height: 100vh;
-  background:
-    linear-gradient(rgba(255, 240, 245, 0.6), rgba(255, 240, 245, 0.6)),
-    url("photo1.PNG") center / cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.blessing-content {
-  padding: 20px;
-  animation: fadeUp 2s ease;
-}
-
-/* BELL */
-.bell {
-  width: 70px;
-  margin-bottom: 16px;
-  transform-origin: top center;
-}
-
-/* DIYA */
-.diya-wrapper {
   position: relative;
-  margin: 20px auto;
-  width: 90px;
+  height: 100vh;
+  background: #fde2e4;
 }
 
-.diya {
-  width: 90px;
+.blessing-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;   /* FULL IMAGE, NO CROP */
 }
 
-.flame {
+.blessing-overlay {
   position: absolute;
-  top: -18px;
-  left: 50%;
-  width: 16px;
-  height: 28px;
-  background: radial-gradient(circle, #ffd36a, #ff6a00);
-  border-radius: 50%;
-  transform: translateX(-50%);
-  animation: flicker 0.15s infinite alternate;
-}
-
-/* TEXT */
-.sanskrit {
-  font-size: 1.4rem;
-  margin-top: 14px;
-}
-
-.bless-text {
-  font-style: italic;
-  margin-top: 8px;
-}
-
-/* ================= HOME ================= */
-
-.hero {
-  min-height: 100vh;
+  inset: 0;
+  background: linear-gradient(
+    rgba(255,235,245,0.2),
+    rgba(255,235,245,0.45)
+  );
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-}
-
-.hero-content {
+  align-items: center;
   text-align: center;
   padding: 20px;
 }
 
-.names {
-  font-size: 3rem;
-  letter-spacing: 2px;
+.sanskrit-main {
+  font-family: "Noto Serif Devanagari", serif;
+  font-size: 30px;
+  color: #7a1f3d;
+  margin-bottom: 10px;
 }
 
-.sanskrit-small {
-  margin-top: 10px;
-  font-size: 1.2rem;
+.sanskrit-sub {
+  font-family: "Noto Serif Devanagari", serif;
+  font-size: 18px;
+  color: #5a1432;
+  line-height: 1.6;
+  max-width: 90%;
 }
 
-.italic {
-  font-style: italic;
-  margin-top: 10px;
+.scroll-down {
+  margin-top: 30px;
+  font-size: 14px;
+  opacity: 0.7;
 }
 
-.details p {
-  margin: 8px 0;
-}
-
-/* ================= SECTIONS ================= */
-
+/* SECTIONS */
 .section {
   padding: 80px 20px;
   text-align: center;
 }
 
 .soft {
-  background: rgba(255, 255, 255, 0.45);
+  background: #fde9f0;
 }
 
-/* ================= ANIMATIONS ================= */
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+h1 {
+  font-size: 42px;
+  color: #3a0b1f;
 }
 
-@keyframes flicker {
-  from { transform: translateX(-50%) scale(1); opacity: 0.8; }
-  to { transform: translateX(-50%) scale(1.1); opacity: 1; }
+h1 span {
+  font-size: 26px;
+  font-style: italic;
 }
 
-/* ================= MOBILE ================= */
+.subtitle {
+  font-size: 20px;
+  opacity: 0.8;
+}
 
-@media (max-width: 600px) {
-  .names { font-size: 2.2rem; }
-  .sanskrit { font-size: 1.1rem; }
+h2 {
+  font-size: 32px;
+  margin-bottom: 14px;
+}
+
+.invite-text {
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+.details {
+  font-size: 18px;
+  margin-top: 12px;
+}
+
+/* FOOTER */
+footer {
+  padding: 20px;
+  background: #f5c6d6;
+  text-align: center;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  h1 { font-size: 30px; }
+  h2 { font-size: 26px; }
+  .sanskrit-main { font-size: 24px; }
+  .sanskrit-sub { font-size: 16px; }
 }

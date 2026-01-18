@@ -1,40 +1,122 @@
-// COUNTDOWN
-const weddingDate = new Date("2026-02-20").getTime();
-const countdown = document.getElementById("countdown");
-
-setInterval(() => {
-  const now = new Date().getTime();
-  const diff = weddingDate - now;
-  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-  countdown.innerText = days + " days to go";
-}, 1000);
-
-let lastScroll = 0;
-const navbar = document.querySelector(".navbar");
+/* =====================================================
+   GLOBAL VARIABLES
+===================================================== */
+const navbar = document.getElementById("navbar");
+const sections = document.querySelectorAll("section");
 const bell = document.querySelector(".bell");
+const flame = document.querySelector(".flame");
 
+let lastScrollTop = 0;
+
+/* =====================================================
+   NAVBAR AUTO HIDE ON SCROLL
+===================================================== */
 window.addEventListener("scroll", () => {
-  const currentScroll = window.scrollY;
+  const currentScroll =
+    window.pageYOffset || document.documentElement.scrollTop;
 
-  /* AUTO HIDE NAVBAR */
-  if (currentScroll > lastScroll && currentScroll > 80) {
-    navbar.classList.add("hide");
+  // Hide navbar on scroll down, show on scroll up
+  if (currentScroll > lastScrollTop && currentScroll > 80) {
+    navbar.style.top = "-80px";
   } else {
-    navbar.classList.remove("hide");
-  }
-  lastScroll = currentScroll;
-
-  /* NAVBAR COLOR CHANGE */
-  if (currentScroll < window.innerHeight) {
-    navbar.className = "navbar pink";
-  } else if (currentScroll < window.innerHeight * 2) {
-    navbar.className = "navbar lavender";
-  } else {
-    navbar.className = "navbar light";
+    navbar.style.top = "0";
   }
 
-  /* BELL SYNC WITH SCROLL */
-  if (bell && currentScroll < window.innerHeight) {
-    bell.style.transform = `rotate(${Math.sin(currentScroll / 40) * 12}deg)`;
+  lastScrollTop = currentScroll;
+});
+
+/* =====================================================
+   NAVBAR COLOR CHANGE PER SECTION
+===================================================== */
+window.addEventListener("scroll", () => {
+  let currentSection = "";
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 120;
+    if (window.scrollY >= sectionTop) {
+      currentSection = section.getAttribute("id");
+    }
+  });
+
+  if (!navbar) return;
+
+  switch (currentSection) {
+    case "blessing":
+      navbar.style.background = "rgba(255,220,235,0.95)";
+      break;
+    case "home":
+      navbar.style.background = "rgba(245,230,255,0.95)";
+      break;
+    case "invitation":
+      navbar.style.background = "rgba(255,240,245,0.95)";
+      break;
+    case "venue":
+      navbar.style.background = "rgba(240,210,225,0.95)";
+      break;
+    default:
+      navbar.style.background = "rgba(255,230,240,0.9)";
+  }
+});
+
+/* =====================================================
+   SMOOTH SCROLL FOR NAV LINKS
+===================================================== */
+document.querySelectorAll("#navbar a").forEach(link => {
+  link.addEventListener("click", e => {
+    e.preventDefault();
+    const targetId = link.getAttribute("href");
+    const targetSection = document.querySelector(targetId);
+
+    if (targetSection) {
+      targetSection.scrollIntoView({
+        behavior: "smooth"
+      });
+    }
+  });
+});
+
+/* =====================================================
+   BELL SWING ANIMATION (SCROLL SYNC)
+===================================================== */
+window.addEventListener("scroll", () => {
+  if (!bell) return;
+
+  // Bell swings only in blessing section
+  const blessing = document.getElementById("blessing");
+  if (!blessing) return;
+
+  const blessingHeight = blessing.offsetHeight;
+  const scrollY = window.scrollY;
+
+  if (scrollY <= blessingHeight) {
+    const angle = Math.sin(scrollY / 40) * 15;
+    bell.style.transform = `rotate(${angle}deg)`;
+  } else {
+    bell.style.transform = "rotate(0deg)";
+  }
+});
+
+/* =====================================================
+   DIYA FLAME FLICKER (NATURAL EFFECT)
+===================================================== */
+if (flame) {
+  setInterval(() => {
+    const scale = 1 + Math.random() * 0.08;
+    const rotate = (Math.random() - 0.5) * 8;
+    flame.style.transform =
+      `translateX(-50%) scale(${scale}) rotate(${rotate}deg)`;
+    flame.style.opacity = 0.75 + Math.random() * 0.25;
+  }, 180);
+}
+
+/* =====================================================
+   SAFETY: IMAGE FULLSCREEN FIX ON LOAD
+===================================================== */
+window.addEventListener("load", () => {
+  const img = document.querySelector(".blessing-image");
+  if (img) {
+    img.style.width = "100%";
+    img.style.height = "100vh";
+    img.style.objectFit = "contain"; // ensures FULL IMAGE always visible
   }
 });
