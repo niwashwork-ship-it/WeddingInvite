@@ -143,12 +143,11 @@ footer {
 }
 
 .family-details .person strong {
-  font-family: "Playfair Display", serif; /* PREMIUM FONT */
-  font-size: 28px;
-  font-weight: 600;
-  letter-spacing: 0.6px;   /* subtle luxury spacing */
-  color: #3a0b1f;
-  display: block;
+  font-family: "Yatra One", "Noto Serif Devanagari", serif;
+  font-size: 28px;        /* same size */
+  font-weight: 400;       /* NOT bold */
+  color: #DE3163;         /* soft wedding pink */
+  letter-spacing: 0.4px;
 }
 
 .family-details .person span {
