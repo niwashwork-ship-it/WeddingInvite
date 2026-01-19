@@ -143,8 +143,10 @@ footer {
 }
 
 .family-details .person strong {
+  font-family: "Playfair Display", serif; /* PREMIUM FONT */
   font-size: 28px;
   font-weight: 600;
+  letter-spacing: 0.6px;   /* subtle luxury spacing */
   color: #3a0b1f;
   display: block;
 }
