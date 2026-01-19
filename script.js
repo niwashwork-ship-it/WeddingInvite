@@ -184,3 +184,50 @@ if (musicBtn && bgMusic) {
     { once: true }
   );
 }
+
+
+
+/* =====================================================
+   AUTO SCROLL – ONE TIME, PREMIUM
+===================================================== */
+
+let autoScrollStarted = false;
+let autoScrollInterval;
+let currentSectionIndex = 0;
+
+const autoSections = Array.from(document.querySelectorAll("section"));
+
+function startAutoScroll() {
+  if (autoScrollStarted || autoSections.length === 0) return;
+
+  autoScrollStarted = true;
+
+  autoScrollInterval = setInterval(() => {
+    currentSectionIndex++;
+
+    if (currentSectionIndex >= autoSections.length) {
+      stopAutoScroll();
+      return;
+    }
+
+    autoSections[currentSectionIndex].scrollIntoView({
+      behavior: "smooth"
+    });
+
+  }, 4500); // 4.5 seconds per section (slow & elegant)
+}
+
+function stopAutoScroll() {
+  clearInterval(autoScrollInterval);
+}
+
+// Start auto-scroll after page load
+window.addEventListener("load", () => {
+  setTimeout(startAutoScroll, 2500);
+});
+
+// Stop auto-scroll on any user interaction
+["wheel", "touchstart", "keydown"].forEach(event => {
+  document.addEventListener(event, stopAutoScroll, { once: true });
+});
+
