@@ -188,7 +188,7 @@ if (musicBtn && bgMusic) {
 
 
 /* =====================================================
-   ULTRA GENTLE CONTINUOUS AUTO SCROLL (WORKING)
+   ULTRA GENTLE CONTINUOUS AUTO SCROLL (FINAL & STABLE)
 ===================================================== */
 
 let autoScrollRunning = true;
@@ -201,7 +201,7 @@ function gentleAutoScroll(time) {
   const delta = time - lastTime;
   lastTime = time;
 
-  const speed = 0.02; // VERY gentle
+  const speed = 0.02; // very slow & premium
 
   // Stop at bottom
   if (
@@ -216,18 +216,14 @@ function gentleAutoScroll(time) {
   requestAnimationFrame(gentleAutoScroll);
 }
 
-// Start after page settles
+// Start after page load
 window.addEventListener("load", () => {
   setTimeout(() => {
     requestAnimationFrame(gentleAutoScroll);
   }, 3000);
 });
 
-// ❗ STOP ONLY ON REAL SCROLL (NOT CLICKS)
+// ❗ STOP ONLY ON USER INTENT (desktop)
 window.addEventListener("wheel", () => {
-  autoScrollRunning = false;
-}, { once: true });
-
-window.addEventListener("scroll", () => {
   autoScrollRunning = false;
 }, { once: true });
