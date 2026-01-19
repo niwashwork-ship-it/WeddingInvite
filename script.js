@@ -201,8 +201,7 @@ function gentleAutoScroll(time) {
   const delta = time - lastTime;
   lastTime = time;
 
-  // Scroll speed (VERY slow)
-  const speed = 0.02; // pixels per ms
+  const speed = 0.02; // VERY gentle
 
   // Stop at bottom
   if (
@@ -224,10 +223,11 @@ window.addEventListener("load", () => {
   }, 3000);
 });
 
-// Stop immediately on any user interaction
-["wheel", "touchstart", "keydown"].forEach(event => {
-  document.addEventListener(event, () => {
-    autoScrollRunning = false;
-  }, { once: true });
-});
+// ❗ STOP ONLY ON REAL SCROLL (NOT CLICKS)
+window.addEventListener("wheel", () => {
+  autoScrollRunning = false;
+}, { once: true });
 
+window.addEventListener("scroll", () => {
+  autoScrollRunning = false;
+}, { once: true });
