@@ -188,46 +188,49 @@ if (musicBtn && bgMusic) {
 
 
 /* =====================================================
-   AUTO SCROLL – ONE TIME, PREMIUM
+   ULTRA-GENTLE FULL PAGE AUTO SCROLL
 ===================================================== */
 
-let autoScrollStarted = false;
-let autoScrollInterval;
-let currentSectionIndex = 0;
+let gentleScrollActive = true;
+let gentleScrollInterval;
 
-const autoSections = Array.from(document.querySelectorAll("section"));
+// Stop scroll on any user action
+function stopGentleScroll() {
+  gentleScrollActive = false;
+  clearInterval(gentleScrollInterval);
+}
 
-function startAutoScroll() {
-  if (autoScrollStarted || autoSections.length === 0) return;
+// Start slow scroll
+function startGentleScroll() {
+  if (!gentleScrollActive) return;
 
-  autoScrollStarted = true;
+  gentleScrollInterval = setInterval(() => {
+    if (!gentleScrollActive) return;
 
-  autoScrollInterval = setInterval(() => {
-    currentSectionIndex++;
-
-    if (currentSectionIndex >= autoSections.length) {
-      stopAutoScroll();
+    // Stop when bottom reached
+    if (
+      window.innerHeight + window.scrollY >=
+      document.body.offsetHeight - 10
+    ) {
+      stopGentleScroll();
       return;
     }
 
-    autoSections[currentSectionIndex].scrollIntoView({
+    window.scrollBy({
+      top: 1.2,      // VERY slow movement
+      left: 0,
       behavior: "smooth"
     });
-
-  }, 4500); // 4.5 seconds per section (slow & elegant)
+  }, 35); // smooth, calm pace
 }
 
-function stopAutoScroll() {
-  clearInterval(autoScrollInterval);
-}
-
-// Start auto-scroll after page load
+// Start after blessing settles
 window.addEventListener("load", () => {
-  setTimeout(startAutoScroll, 2500);
+  setTimeout(startGentleScroll, 3000);
 });
 
-// Stop auto-scroll on any user interaction
+// Stop immediately on interaction
 ["wheel", "touchstart", "keydown"].forEach(event => {
-  document.addEventListener(event, stopAutoScroll, { once: true });
+  document.addEventListener(event, stopGentleScroll, { once: true });
 });
 
