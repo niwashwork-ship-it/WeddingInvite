@@ -188,49 +188,46 @@ if (musicBtn && bgMusic) {
 
 
 /* =====================================================
-   ULTRA-GENTLE FULL PAGE AUTO SCROLL
+   ULTRA GENTLE CONTINUOUS AUTO SCROLL (WORKING)
 ===================================================== */
 
-let gentleScrollActive = true;
-let gentleScrollInterval;
+let autoScrollRunning = true;
+let lastTime = null;
 
-// Stop scroll on any user action
-function stopGentleScroll() {
-  gentleScrollActive = false;
-  clearInterval(gentleScrollInterval);
+function gentleAutoScroll(time) {
+  if (!autoScrollRunning) return;
+
+  if (!lastTime) lastTime = time;
+  const delta = time - lastTime;
+  lastTime = time;
+
+  // Scroll speed (VERY slow)
+  const speed = 0.02; // pixels per ms
+
+  // Stop at bottom
+  if (
+    window.innerHeight + window.scrollY >=
+    document.body.scrollHeight - 5
+  ) {
+    autoScrollRunning = false;
+    return;
+  }
+
+  window.scrollBy(0, delta * speed);
+  requestAnimationFrame(gentleAutoScroll);
 }
 
-// Start slow scroll
-function startGentleScroll() {
-  if (!gentleScrollActive) return;
-
-  gentleScrollInterval = setInterval(() => {
-    if (!gentleScrollActive) return;
-
-    // Stop when bottom reached
-    if (
-      window.innerHeight + window.scrollY >=
-      document.body.offsetHeight - 10
-    ) {
-      stopGentleScroll();
-      return;
-    }
-
-    window.scrollBy({
-      top: 1.2,      // VERY slow movement
-      left: 0,
-      behavior: "smooth"
-    });
-  }, 35); // smooth, calm pace
-}
-
-// Start after blessing settles
+// Start after page settles
 window.addEventListener("load", () => {
-  setTimeout(startGentleScroll, 3000);
+  setTimeout(() => {
+    requestAnimationFrame(gentleAutoScroll);
+  }, 3000);
 });
 
-// Stop immediately on interaction
+// Stop immediately on any user interaction
 ["wheel", "touchstart", "keydown"].forEach(event => {
-  document.addEventListener(event, stopGentleScroll, { once: true });
+  document.addEventListener(event, () => {
+    autoScrollRunning = false;
+  }, { once: true });
 });
 
