@@ -201,7 +201,7 @@ function gentleAutoScroll(time) {
   const delta = time - lastTime;
   lastTime = time;
 
-  const speed = 0.02; // very slow & premium
+  const speed = 0.04; // very slow & premium
 
   // Stop at bottom
   if (
