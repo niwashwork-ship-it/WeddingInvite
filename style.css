@@ -377,9 +377,11 @@ footer {
 }
 
 .invite-title {
-  font-size: 34px;
-  margin-bottom: 14px;
-  color: #3a0b1f;
+  font-family: "Noto Serif Devanagari", serif;
+  font-weight: 400;          /* soft, not heavy */
+  letter-spacing: 1.2px;     /* gentle spacing */
+  color: #6b3a4a;            /* soft muted tone (not dark) */
+  opacity: 0.9;              /* airy, premium feel */
 }
 
 .invite-text {
