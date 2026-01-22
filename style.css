@@ -373,10 +373,7 @@ footer {
 /* ================= INVITATION SECTION REFINED ================= */
 
 .invitation-soft {
-  background: linear-gradient(
-    rgba(255, 255, 255, 0.96),
-    rgba(255, 248, 252, 0.96)
-  );
+  background: #ffffff;
 }
 
 .invite-title {
