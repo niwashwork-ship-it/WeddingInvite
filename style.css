@@ -370,3 +370,58 @@ footer {
   50% { opacity: 0.25; }
 }
 
+/* ================= INVITATION SECTION REFINED ================= */
+
+.invitation-soft {
+  background: linear-gradient(
+    rgba(255,240,245,0.95),
+    rgba(255,235,245,0.95)
+  );
+}
+
+.invite-title {
+  font-size: 34px;
+  margin-bottom: 14px;
+  color: #3a0b1f;
+}
+
+.invite-text {
+  font-size: 19px;
+  line-height: 1.6;
+  opacity: 0.85;
+  margin-bottom: 28px;
+}
+
+.invite-details {
+  max-width: 420px;
+  margin: 0 auto 28px;
+  text-align: left;
+}
+
+.invite-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  font-size: 17px;
+}
+
+.invite-row .label {
+  opacity: 0.7;
+}
+
+.invite-row .value b {
+  font-weight: 600;
+}
+
+/* Save the Date button */
+.calendar-btn {
+  display: inline-block;
+  padding: 12px 26px;
+  border-radius: 26px;
+  background: #de3163;
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  box-shadow: 0 6px 16px rgba(222,49,99,0.35);
+}
+
